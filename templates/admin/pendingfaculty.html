@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,intial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+        body{margin:0px}
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-image: linear-gradient(to right, #1fd40fe2, rgba(255,222,0,1));
+          height: 50px;
+        }
+        li {
+          float: left;
+          border-right:1px solid #bbb;
+        }
+        
+        li a {
+            font-size: 20px;;
+          display: block;
+          color: black;
+          text-align: center;
+          padding: 16px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: rgb(229, 255, 0);
+        }
+.container{margin-left:25%;;
+margin-top: 200px;}    
+table{
+  
+        border-collapse:collapse;
+       width:70%;
+        height:300px;}
+table,td,th{border:2px solid black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+height: 40px;
+text-align: center;}
+      </style>
+</head>
+<body>
+  <ul>
+    <li style="float:right;color:black;font-size: 25px;padding-top: 6px;">tagore degree college(atnomous)</li>
+    <li style="float:left;color: black; font-size: 25px;padding-top: 6px;">Admin portal</li>
+    <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>
+  </ul>
+    <div class="container">
+        <table>
+      <tr> 
+       <th colspan="6"style="color:white;background-color:black"> Pending Faculty details</th> 
+      </tr>
+      <tr>
+      <th>sl.no</th> <th> photo</th> <th> faculty name</th>   <th> course selected</th> <th> approve</th> <th>reject</th>
+      </tr>
+      {% for faculty in facultys %}
+      <tr >
+          <td>{{forloop.counter}}</td>
+          <td> <img src="{{faculty.profile_pic.url}}" height="50px" width="50px"></td> 
+        <td >{{faculty.user}}</td>
+        
+        <td> {{faculty.course}}</td> 
+        <td><a href="{% url 'admin-approving-faculty' faculty.id %}"><i class="fa fa-check-circle" style="font-size:30px;color:green"></i></a></td>
+        <td><a href="{% url 'admin-rejecting-faculty' faculty.id %}"><i class="fa fa-close" style="font-size:30px;color:red"></i> </a></td>  
+</tr> 
+      </tr>
+      {% endfor %}
+</div>
+{% include 'admin/base.html' %}
+</body>
+</html

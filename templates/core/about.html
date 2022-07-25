@@ -1,0 +1,207 @@
+{% comment %} <!DOCTYPE html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;
+margin:0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+.row {
+  margin: 8px -16px;
+}
+.row,
+.row > .column {
+  padding: 8px;
+}
+.column {
+  float: left;
+  width: 25%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.content {
+  padding: 10px;
+  width:1000px;
+}
+.details{background-color:black;
+    text-decoration: none;
+height:50px;
+width:150px;
+color:white;
+font-size: 25px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+border-radius: 2px solid black;}
+</style>
+</head>
+<body>
+  {% include 'core/navbar.html' %}
+<div class="main">
+  <h2 style="text-align: center;font-size:20px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">About Us:</h2>
+<hr>
+<div class="row">
+  <div class="column">
+    <div class="content">
+       
+    </div>
+  </div>
+</div>
+</body>
+</html> {% endcomment %}
+
+
+
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;
+margin:0px;
+}
+ul{margin:0px;
+     padding:0px;
+    list-style-type: none;   
+    overflow:hidden;}
+        li{float:right;
+        }
+.navbar {
+  width: 100%;
+  background-color: rgb(237, 51, 14);
+  overflow: auto;
+}
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+text-decoration: none;}
+.navbar a:hover {
+  background-color: #000;
+}
+* {
+  box-sizing: border-box;
+}
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+.row {
+  margin: 8px -16px;
+}
+.row,
+.row > .column {
+  padding: 8px;
+}
+.column {
+  float: left;
+  width: 25%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.content {
+  padding: 10px;
+  width:1000px;
+}
+.details{background-color:black;
+    text-decoration: none;
+height:50px;
+width:150px;
+color:white;
+font-size: 25px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+border-radius: 2px solid black;}
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  border-radius: 5px;
+  padding: 20px;
+}
+.col-25 {
+  float: left;
+  width: 30%;
+  margin-top: 6px;
+}
+.col-75 {
+  float: left;
+  width: 70%;
+  margin-top: 6px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+<div class="main">
+<h3 style="text-align:center">ABOUT US:</h3>
+<hr>
+<div class="row">
+  <div class="column">
+    <div class="content">
+       <p>The Vision of the college is to generate and disseminate knowledge through a harmonious blend of ancient and modern wisdom, and to serve the society by developing in students heightened intellectual, cultural, ethical, and humane sensitivities; to foster a scientific temper, and to promote professional and technological expertise. Central to this vision is a commitment to regional and national development in consonance with our culture, heritage, and environment.</p>
+     <p>The college has a vision of developing, enhancing, and improving the quality of human resources to meet the challenges of regional, national and global socio-economic changes. It's mission is to achieve excellence in teaching and research and to create opportunities for the students to contribute to the national and regional development.</p>
+      <p>tagore degree college(autonomous) is re-accredited by the National Assessment and Accreditation Council (an Autonomous Institution of the University Grants Commission) as 'A+' Grade.</p>
+      <div class="container">
+  
+        <div class="row">
+          <div class="col-25">
+           <img src="{% static 'core/principal.jpeg' %}" alt="5 Terre" style="width:50%;margin-left: 100px;">
+          </div>
+          <div class="col-75">
+          <p>Mr.Katravath Rajendar Your honoured Principal of Tagore Degree College Autonomous </p>
+          <p>He has a 19 years of experience in Business and institutional development.</p>
+          <P>Completed Masters in MBA in University Post Graduate College</P>
+          <P>It is my privilege to welcome you to the big family of TDCA which was established in 2005 and has been imparting higher education in the fields of Bachelor of Computer Science(BCA),Bachelor of Business Arts(BBA), Bachelor of Commerce(BCOM),Bachelor of Life Science(BLS).
+            In the 14 years of existence TDCA has established itself as a premier Institution and I consider its my privilege to be associated with such a prestigious.
+            is escalated to great horizons of success. It has become synonymous with academic excellence, a bench mark to measure co-curricular excellence and also a centre which creates responsible citizens.</P>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+          <img src="C:\\Users\\RAJESH RATHOD\\Desktop\\WhatsApp Image 2019-08-01 at 21.06.33.jpeg" alt="5 Terre" style="width:50%;margin-left: 100px;">
+          </div>
+          <div class="col-75">
+            <p>Mr. Vamshi Krishna Your honoured Vice Principal of Tagore Degree College Autonomous</p>
+          <p>He has a 9 years of experience in teaching, research, and institutional development.</p>
+          <P>Completed Masters in Computer Science</P>
+          <P>As the Vice Principal of Tagore Degree College Autonomous(TDCA), he envisions the importance of education wherein the students learn, apply and develop innovative solutions /products that solve the problems of societal needy.</P>
+            <br><br>
+           
+        </div>
+        
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<head
+
+

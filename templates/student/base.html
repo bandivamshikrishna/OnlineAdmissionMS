@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body{margin:0px;}
+ul{list-style-type: none;
+        margin:0px;
+    padding:0px;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+position:sticky;
+top:0px;
+}
+li{color:black;
+display:inline-block;
+padding:20px;}
+.sidebar {
+  margin-top:80px;
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: whitesmoke;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+.sidebar a {
+  padding: 15px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+.sidebar a:hover { color: black;
+}
+.main {
+  margin-left:25%; 
+  padding: 0px 10px;
+}
+.profile_image{
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+    <ul>
+    <li style="font-size:35px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">tagore degree college(Autnomous)</i></li>
+</ul>
+<div class="sidebar">
+    <center><img src="{{student.profile_pic.url}}" class="profile_image"></center>
+    {% if not examcompleted %}
+       
+         <a href="{% url 'student-course-selection' %}">course seletion</a>
+      
+      {% if student.course %}
+        <a href="{% url 'student-take-to-test' %}">Take to test</a>
+        {% endif %}
+    {% endif %}
+    {% if examcompleted %}
+      <a href="{% url 'student-marks-details' %}">marks details</a>
+  {% endif %}
+  {% if qualified %}
+        <a href="{% url 'student-upload-certificates' %}">upload certificates</a>
+  {% endif %}
+  <a href="{% url 'student-profile' %}"></i>profile</a> 
+  <a  href="{% url 'student-change-password' %}">Change Password</a> 
+  <a  href="{% url 'student-logout' %}">logout</a>
+</div>   
+</body>
+</html> 

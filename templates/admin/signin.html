@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,intial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{margin:0px;
+            background: url("{% static 'core/login.jpeg' %}");
+            background-size: 900px 800px ;
+    background-repeat: no-repeat;
+    width:100%;
+}
+             .container{margin-left: 50%;
+                       margin-right: 500px;
+                       margin-top:150px;
+                       height:400px;
+                       width:400px;
+                       border-radius:6px;
+                      }
+                       
+.input-field {
+  width: 90%;
+  padding: 10px;
+  outline:none;
+}
+label{font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;}
+.input-field:focus {
+  border: 2px solid black;}
+.signin{
+color:black;
+background-color: rgb(0, 85, 255);
+width:97%;
+height:50px;
+font-size: 20px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+
+    </style>
+    </head>
+    <body>
+        {% include 'core/navbar.html' %}
+        {{authform.non_field_errors}}
+        <div class="container">
+            <form style="margin:20px;"  method='POST'>
+                {% csrf_token %}
+               <label>username:</label>
+               <br><br>
+               {{authform.username.errors}}
+               {% render_field authform.username|attr:"required:true" placeholder="Username" class="input-field" %}<br><br>
+                <label>password:</label>
+                <br><br>
+                {{authform.password.errors}}
+                {% render_field authform.password|attr:"required:true" placeholder="Password" class="input-field" %}<br><br>
+              <br>
+                <button type="submit" class="signin">sign in</button><br><br>
+                
+         
+            </form>
+        </div>
+    </body>
+</html>

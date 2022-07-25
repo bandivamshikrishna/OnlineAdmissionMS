@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+     body{margin:0px}
+     ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+       overflow: hidden;
+       background-image: linear-gradient(to right, #1fd40fe2, rgba(255,222,0,1));
+       height: 50px;
+     }
+     li {
+       float: left;
+       border-right:1px solid #bbb;
+     }
+     
+     li a {
+         font-size: 20px;;
+       display: block;
+       color: black;
+       text-align: center;
+       padding: 16px 16px;
+       text-decoration: none;
+     }
+     
+     li a:hover:not(.active) {
+       background-color: rgb(229, 255, 0);
+     }
+     body {
+       font-family: 'Lato', sans-serif;
+     }
+     
+.container{margin-left: 25%;
+     margin-top: 200px;}
+     textarea {
+width: 80%;
+height: 150px;
+padding: 12px 20px;
+box-sizing: border-box;
+border: 2px solid #ccc;
+border-radius: 4px;
+background-color: #f8f8f8;
+font-size: 16px;
+resize: vertical;
+} 
+</style>
+</head>
+<body>
+     <ul>
+          <li style="float:right;color:black;font-size: 25px;padding-top: 6px;">tagore degree college(atnomous)</li>
+          <li style="float:left;color: black; font-size: 25px;padding-top: 6px;">Admin portal</li>
+          <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>
+        </ul>
+        
+      <div class="container">
+          
+          <h2 style="text-align:center;font-family:'Courier New', Courier, monospace">Admin dashboard</h2>
+          <hr>
+          <h3 style="font-family:Georgia, 'Times New Roman', Times, serif;text-align:center">welcome to admin portal page of tagore degree college(Autonomous)</h3>
+          <h3 style="font-family:Georgia, 'Times New Roman', Times, serif;text-align:center">Through this admin portal page you can post all the necessary details. </h3>
+        
+      </div>
+      {% include 'admin/base.html' %}
+
+</html>

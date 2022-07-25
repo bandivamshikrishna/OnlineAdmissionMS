@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin:0px}
+        .container{height:100%;
+       margin-top: 50px;}
+    </style>
+</head>
+<body>
+    {% include 'faculty/base.html' with faculty=request.user.faculty%}
+    <div class="container">
+        <center><h1>{{course.name}} Course Questions</h1></center>
+        <table border="1" height="200" width="1000" align="center" >
+            <tr align="center" background-color="blue">
+                <th >s.no</th>  <th>Question</th>   <th>Option1</th>  <th>Option2</th>   <th>Option3</th><th>Option4</th> <th>Answer</th> <th> Marks</th> <th> Edit</th> <th> Cancel</th>
+            </tr>
+            {% for question in questions %}
+            <tr align="center" >
+                <td>{{forloop.counter}}</td>  
+        
+                <td>{{question.question}}</td> 
+        
+                <td>{{question.option1}}</td>
+        
+                <td>{{question.option2}}</td> 
+        
+                <td>{{question.option3}}</td>
+
+                <td>{{question.option4}}</td>
+
+                <td>{{question.answer}}</td>
+
+                <td>{{question.marks}}</td>
+        
+                <td> <a href="{% url 'faculty-question-edit' question.id %}" > Edit</a></td>
+        
+                <td> <a href="{% url 'faculty-question-delete' question.id %}"> Cancel</a></td>
+        
+            </tr>
+            {% endfor %}
+            <table>
+    </div>
+</body>
+</html>

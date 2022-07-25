@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,intial-scale=1.o">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{margin:0px;
+              background-repeat:no-repeat;
+              background-size:1600px 800px;
+            background-image:url({% static 'core/admin.jpg' %})}
+            
+h3{text-align: center;
+font-size: 25px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+.link{
+           font-size: 25px;
+           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          width:400px;
+        height: 50px;
+        text-align:center;
+      margin-left: 630px;
+    padding:100px 50px;
+    border-radius:15px;}
+
+          </style>
+    </head>
+    <body>
+        {% include 'core/navbar.html' %}
+            <h3>Admin portal:</h3>
+       
+          <a href="{% url 'admin-sign-in' %}"class="link">login as a Admin</a>
+      
+            
+          
+          </body>
+</html>

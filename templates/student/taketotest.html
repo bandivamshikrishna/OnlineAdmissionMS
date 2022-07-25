@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,intial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body{margin:0px}
+.container{margin-top:5%;
+           margin-left:25%;
+           font-size: 20px;;
+height:100%}
+.page{padding:20px;}
+.butn{height: 50px;
+width:250px;
+color:white;
+background-color: rgb(43, 156, 226);
+font-size: 25px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+border:2px solid rgb(43, 147, 226);
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+    {% include 'student/base.html' %}
+    <div class="container">
+      <div class="page">
+        <h1>Exam Details:</h1>
+        <h2>{{student.course}} entrace exam test!</h2>
+        <p>Total questions:{{questions|length}}</p>
+        <p>Total marks:{{totalmarks}}</p>
+        <p> The qualifed marks are 14</p>
+        <h2>Rules:</h2>
+        <p>1.The quetions is based on basic apptitude,reasoning,verbal ability and  selected course basics </p>
+        <p>2.All questions are MCQ(Multiple choice questions)</p>
+        <p>3.Only one choice is correct among the given</p>
+        <p>4.Every question carry different marks</p>
+        <p>5.Try to Answer ASAP</p>
+        <p>6.Questions are presented randomly</p>
+        <p>7.You will be able to view marks immediately once after you submit the answer</p>
+       <a href="{% url 'student-exam' student.course %}"> <button type="button" class="butn">Enter Examination</button></a>
+        <p> Best of Luck students!</p>
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+     body{margin:0px}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to right, #1fd40fe2, rgba(255,222,0,1));
+  height: 50px;
+  position:sticky;
+  top:0px;
+}
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li a {
+    font-size: 20px;;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(229, 255, 0);
+}
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 50px;
+  left: 0;
+  background-image: linear-gradient(to right, rgba(152, 130, 139, 0), rgb(18, 92, 202));
+  border-radius:2px black;
+  
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding:5px;
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: black;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+</style>
+</head>
+<body>
+      
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="{% url 'admin-online-admission' %}">online Admission</a>
+    <a href="{% url 'admin-latest-news' %}">Latest news</a>
+    <a href="{% url 'admin-announcements' %}">Annocuments</a>
+    <a href="{% url 'admin-circulars' %}">circulars</a>
+    <a href="{% url 'admin-upcoming-events' %}">upcoming events</a>
+    <a href="{% url 'admin-conferences' %}">conferences</a>
+    <a href="{% url 'admin-seminars' %}">seminars</a>
+    <a href="{% url 'admin-workshops' %}">workshops</a>
+    <a href="{% url 'admin-internships' %}">internships</a>
+    <a href="{% url 'admin-pending-faculty' %}">Pending Faculty</a>
+    <a href="{% url 'admin-approved-faculty' %}">Approved Faculty</a>
+    <a href="{% url 'admin-student-details' %}">student details</a>
+    <a href="{% url 'admin-logout' %}">logout</a>    
+</div>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "20%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>    
+</body>
+</html>

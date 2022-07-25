@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,intial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style>
+body{margin:0px;}
+.container{margin-left: 25%;
+  margin-top: 150px;
+           height: 400px;
+           width:900px;
+          }
+          h3{text-align: center;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+ </style>
+ </head>
+ <body>
+   {% include 'student/base.html' with student=request.user.student %}
+ <div class="container">
+<h2 style="text-align:center;color:royalblue;font-family: Georgia, 'Times New Roman', Times, serif;">student dashboard</h2>
+<hr>
+<h3>Mr.{{student.user|capfirst}} Welcome to the online admission in the Tagore degree college(Autonomous)</h3>
+<h3>Through this website you can go through online admission process</h3>
+<h3>First Select the course in which you want to get admission into</h3>
+<h3>Attempt the test in the given time period for the selected course</h3>
+<h3>If you have passed out in the examination you need to go through the online admission process were you need to upload the neccssary certificates requried for the admission procces</h3>
+<h3>If you haven't passed out in the examination you are not eligible for the admission process .Better luck for Next time  </h3>
+<h3>start your journey here:</h3>
+</div>
+
+</body>
+</html>

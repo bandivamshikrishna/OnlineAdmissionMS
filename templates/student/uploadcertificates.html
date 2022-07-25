@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,intial-scale=1.0">
+        
+        <style>
+          body{margin: 0px;}
+.container{margin-left:25%;
+          margin-top: 5%;}
+.menu{margin-top:20px;
+    margin-left:50px;
+    background-color:white;
+width:900px;
+height:1000px;
+}
+h2{text-align:center}
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=file]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.button{
+  background-color: #45a049;
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:white;
+  width:100%;
+  height:50px;
+  border-radius:4px;
+  border:2px solid black;
+}
+
+</style>
+</head>
+<body>
+  {% include 'student/base.html' with student=request.user.student %}
+    <div class="container">
+    <div class="menu">
+        <h2>Upload certificates</h2>
+
+        <form action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+            <label>full name (As per aadhar):</label><br>
+            {% render_field certificateform.full_name|attr:"required:true" placeholder="full name" %}<br>
+          
+            <label>permenentAddress:</label><br>
+            {% render_field certificateform.permanent_address|attr:"required:true" placeholder="permenent Address" %}<br>
+          
+            <label>Aadhar photo:</label><br>
+            {% render_field certificateform.aadhar|attr:"required:true" %}<br>
+
+            <label>ssc memo:</label><br>
+            {% render_field certificateform.ssc_memo|attr:"required:true" %}<br>
+            <label>ssc bonafide:</label><br>
+            {% render_field certificateform.ssc_bonafide|attr:"required:true" %}<br>
+
+            <label>inter memo:</label><br>
+            {% render_field certificateform.inter_memo|attr:"required:true" %}<br>
+            <label>Inter bonafide:</label><br>
+            {% render_field certificateform.inter_bonafide|attr:"required:true" %}<br>
+
+            <label>Transfer certificate:</label><br>
+            {% render_field certificateform.transfer_certificate|attr:"required:true" %}<br>
+
+            <label>Caste certificate:</label><br>
+            {% render_field certificateform.caste_certificate|attr:"required:true" %}<br>
+            <label>Income certificate:</label><br>
+            {% render_field certificateform.income_certificate|attr:"required:true" %}<br>
+            <label>Gap certificate:</label><br>
+            {% render_field certificateform.gap_certificate|attr:"required:false" %}<br>
+
+
+            
+            <input type="submit" value="save" class="button">
+        </form>
+    </div>
+    </div>
+    </body>
+</html>

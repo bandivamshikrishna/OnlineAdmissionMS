@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html>
+<head>
+<style>
+body{margin:0px}
+.container{
+width:1000px;
+height:800px;
+margin-top: 100px;
+margin-left:200px;
+border-radius: 6px solid black;
+}
+.avatar {
+  vertical-align: middle;
+  text-align: center;
+  width: 200px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 350px;
+}
+.col-25 {margin-left: 10%;
+  float: left;
+  width: 30%;
+  margin-top: 0px;
+}
+
+.col-75 {margin-left: 10%;
+  float: left;
+  width: 30%;
+  margin-top: 0px;
+}
+
+.col-100 {margin-left: 10%;
+  float: left;
+  width: 75%;
+  margin-top: 0px;}
+  .address{width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;}
+  .email{width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;}
+input[type=text] {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=number] {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=email] {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type="contact"]{width:90%;
+padding:12px;
+border:1px solid #ccc;
+border-radius: 4px;}
+ .Edit{
+     background-color: bisque;
+     font-size: 25px;
+     height:60px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.save{
+     background-color:rgb(220, 130, 20);
+     font-size: 25px;
+     height:60px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+  {% include 'faculty/base.html' with faculty=request.user.faculty%}
+<div class="container">
+<div class="header">
+<h4 style="margin-top:120px;margin-left:100px;font-size:20px;font-family:Georgia, 'Times New Roman', Times, serif;border-bottom: 2px soild black;">Faculty Update Profile:</h4>
+</div>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+    {% comment %} <img src="C:\Users\RAJESH RATHOD\Desktop\WhatsApp Image 2019-08-01 at 21.06.33.jpeg"  class="avatar"><br><br> {% endcomment %}
+    <div class="row">
+        <div class="col-25">
+          <label for="fname">First Name:</label><br><br>
+          {% render_field userupdateform.first_name %}
+          <br><br>
+        </div>
+        <div class="col-75">
+            <label>last name:</label><br><br>
+          {% render_field userupdateform.last_name %}
+          <br><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-100">
+            <label>address:</label><br><br> 
+            {% render_field facultyupdateform.address %}
+          <br><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-100">
+          <label>contact:</label><br><br>
+          {% render_field facultyupdateform.contact %}
+          <br><br>
+        </div>
+        <div class="row">
+            <div class="col-100">
+              <label>Email:</label><br><br>
+              {% render_field userupdateform.email %}
+              <br><br>
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-100">
+              <label>Profile Pic:</label><br><br>
+              <img src="{{faculty.profile_pic.url}}" alt="" width=100px height=100px><br>
+              {% render_field facultyupdateform.profile_pic %}
+              <br><br>
+            </div>
+            </div>
+            
+              <div class="row">
+                <div class="col-25">
+                    <br><br>
+                    <button type="submit" class="Edit">Update</button>
+                </div>
+                <div class="col-75">
+                    <br><br>
+                    <a href="{% url 'faculty-profile' %}"><button type="button" class="save">Cancel</button></a>
+                </div>
+              </div>
+</form>
+</body>
+</html>

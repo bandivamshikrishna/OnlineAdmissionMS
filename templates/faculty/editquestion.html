@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin:0px}
+       .container{height:100%;
+      margin-top: 50px;}
+.row{padding:20px}
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+</style>
+</head>
+<body>
+  {% include 'faculty/base.html' with faculty=request.user.faculty%}
+    <div class="container">
+        <div class="row">
+            <form method='POST'>
+              {% csrf_token %}
+                <h2 style="text-align:center">Edit Question:</h2>
+                  
+            <label for="question">Question:</label>
+            {{questionform.question.errors}}
+            {{questionform.question}}
+            <label for="Marks">Marks:</label>
+            {{questionform.marks.errors}}
+            {{questionform.marks}}
+            <label for="Option 1">Option 1:</label>
+            {{questionform.option1.errors}}
+            {{questionform.option1}}
+            <label for="Option 2">Option 2:</label>
+            {{questionform.option2.errors}}
+            {{questionform.option2}}
+            <label for="Option 3">Option 3:</label>
+            {{questionform.option3.errors}}
+            {{questionform.option3}}
+            <label for="Option 4">Option 4:</label>
+            {{questionform.option4.errors}}
+            {{questionform.option4}}
+            <label for="correct answer">Correct Answer:</label>
+            {{questionform.answer.errors}}
+            {{questionform.answer}}
+            <input type="submit" value="Submit Question">
+              </form>
+</body>
+</html>

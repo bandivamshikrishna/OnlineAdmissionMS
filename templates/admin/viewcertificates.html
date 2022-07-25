@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,intial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+        body{margin:0px}
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-image: linear-gradient(to right, #1fd40fe2, rgba(255,222,0,1));
+          height: 50px;
+        }
+        li {
+          float: left;
+          border-right:1px solid #bbb;
+        }
+        
+        li a {
+            font-size: 20px;;
+          display: block;
+          color: black;
+          text-align: center;
+          padding: 16px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: rgb(229, 255, 0);
+        }
+.container{margin-left:25%;
+  
+margin-top: 100px;}    
+table{ border-collapse:collapse;
+       width:70%;
+        height:300px;}
+table,td,th{border:2px solid black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+height: 40px;
+text-align: center;}
+.image{margin-left:28%;}
+.col-25{float:left;
+    width:40%;
+    margin-top:6px;
+    margin-left:100px;
+
+}
+  
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+          h3{margin-left:300px;}
+      </style>
+</head>
+<body>
+  <ul>
+    <li style="float:right;color:black;font-size: 25px;padding-top: 6px;">tagore degree college(atnomous)</li>
+    <li style="float:left;color: black; font-size: 25px;padding-top: 6px;">Admin portal</li>
+    <li><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span></li>
+  </ul>
+    <div class="container">
+    <img src="{{studentcertificates.student.profile_pic.url}}"class="image"style="width:30%;">
+    <h3>Full Name(As per aadhar): {{studentcertificates.full_name}}</h3>
+    <h3>permanent address(As per aadhar):{{studentcertificates.permanent_address}}</h3>
+        <div class="row">
+            <div class="col-25">
+             <p>Aadhar photo:</p>
+             <img src="{{studentcertificates.aadhar.url}}" alt="5 Terre" style="width:30%;">
+            </div>
+            <div class="col-25">
+              <p>ssc memo:</p>
+             <img src="{{studentcertificates.ssc_memo.url}}"alt="5 terre"style="width:30%">
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <p> ssc bonafide:</p>
+            <img src="{{studentcertificates.ssc_bonafide.url}}" alt="5 Terre" style="width:30%;">
+            </div>
+            <div class="col-25">
+            <p>inter memo:</p>
+              <img src="{{studentcertificates.inter_memo.url}}"alt="5 Terre"style="width:30%">
+            </div>  
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <p> inter bonafide:</p>
+            <img src="{{studentcertificates.inter_bonafide.url}}" alt="5 Terre" style="width:30%;">
+            </div>
+            <div class="col-25">
+            <p>Transfer certificates:</p>
+              <img src="{{studentcertificates.transfer_certificate.url}}"alt="5 Terre"style="width:30%;height:90px;">
+            </div>  
+            <div class="row">
+              <div class="col-25">
+                <p> caste certificate:</p>
+              <img src="{{studentcertificates.caste_certificate.url}}" alt="5 Terre" style="width:30%;">
+              </div>
+              <div class="col-25">
+              <p>Income certificates:</p>
+                <img src="{{studentcertificates.income_certificate.url}}"alt="5 Terre"style="width:30%;height:90px;">
+              </div> 
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <p> gap certificate:</p>
+            <img src="{{studentcertificates.gap_certificate.url}}" alt="5 Terre" style="width:30%;">
+            </div> 
+        </div>
+
+    </div>
+    {% include 'admin/base.html' %}
+    </body>
+    </html

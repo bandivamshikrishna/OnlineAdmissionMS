@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content="width=device-width,intial-scale=1.o">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+    body{margin:0px;
+    background-image: url({% static 'core/home.jpg' %});
+    background-size: 1600px 800px ;
+    background-repeat: no-repeat;
+    width:100%}
+    
+.menu a {
+  background-color: #e5e5e5;
+  padding: 10px 60px;
+  margin-top: 7px;
+  display: block;
+  width: 15%;
+  color: black;
+  font-size: 15px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+        </style>
+    </head>
+    <body>
+      {% include 'core/navbar.html' %}
+
+              <div style="overflow:auto;height:100%;width:100%;position:sticky">
+                <marquee style="background-color: rgb(122, 103, 183);height:30px;padding:5px">online Admission in progress</marquee>
+                <div class="menu">
+                  <a href="{% url 'online-admission' %}">online Admission</a>
+                  <a href="{% url 'latest-news' %}">Latest news</a>
+                  <a href="{% url 'announcements' %}">Annocuments</a>
+                  <a href="{% url 'circulars' %}">circulars</a>
+                  <a href="{% url 'upcoming-events' %}">upcoming events</a>
+                  <a href="{% url 'conferences' %}">conferences</a>
+                  <a href="{% url 'seminars' %}">seminars</a>
+                  <a href="{% url 'workshops' %}">workshops</a>
+                  <a href="{% url 'internships' %}">internships</a>
+                </div>
+          </body>
+</html>

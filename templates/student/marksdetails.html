@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body{margin:0px;}
+ul{list-style-type: none;
+        margin:0px;
+    padding:0px;
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+position:sticky;
+top:0px;
+}
+li{color:black;
+display:inline-block;
+padding:20px;}
+ul1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  position: fixed;
+  top:81px;
+  height: 150PX;
+  overflow: auto;
+  background-color: whitesmoke;
+}
+li1 a {
+  display: block;
+  padding: 50px 80px;
+  text-decoration: none;
+  font-size: 20px;;
+}
+.sidebar {
+  margin-top: 200px;
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: whitesmoke;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+.sidebar a {
+  padding: 15px 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+.sidebar a:hover { color: black;
+}
+.main {
+  margin-left:25%; 
+  padding: 0px 10px;
+}
+.profile_image{
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+
+}
+.container{margin-left:20%;}
+        h1{background-color: rgb(27, 121, 38);
+           color:black;
+           text-align:center;
+           margin-top: 150px;
+        }
+table{
+        margin-top:50px;
+        margin-left: 250px;
+        border-collapse:collapse;
+       width:55%;}
+table,td,th{border:2px solid black;}
+</style>
+</head>
+<body>
+    
+{% include 'student/base.html' with student=request.user.student %}
+<div class="container">
+        <h1>marks details:</h1>
+        <table>
+  <tr>
+    <th> Name</th>
+    <th>selected course</th>
+    <th>total marks</th>
+    <th>scored marks</th>
+    <th>Exam qualification</th>
+  </tr>
+  <tr>
+    <td>{{student.user|capfirst}}</td>
+    <td>{{student.course}}</td>
+    <td>{{result.course.marks}}</td>
+    <td>{{result.marks}}</td>
+    <td>{{examqualification}}</td>
+     </tr>
+  <tr>
+</div>  
+{% comment %} <a  href="file:///F:/online%20registration%20ou%20pg%20project/student_did_not_select.html">student did not select</a> {% endcomment %}
+</body>
+</html> 

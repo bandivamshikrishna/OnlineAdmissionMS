@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body{margin:0px;}
+.container{
+width:60%;
+height:850px;
+margin-top: 100px;
+margin-left:25%;
+box-shadow: 10px 10px 5px #aaaaaa;
+}
+.avatar {
+  vertical-align: middle;
+ margin-left: 60%;
+  width: 200px;
+  height: 150px;
+  border-radius: 50%;
+}
+.col-25 {margin-left: 10%;
+  float: left;
+  width: 30%;
+  margin-top: 0px;
+}
+.col-75 {margin-left: 30%;
+  float: left;
+  width: 30%;
+  margin-top: 0px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.editprofile{height: 50px;
+width:200px;
+color:white;
+background-color: blueviolet;
+font-size: 25px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+border:2px solid blueviolet;
+cursor: pointer;
+box-shadow: 10px 10px 5px #aaaaaa;
+}
+</style>
+</head>
+<body>
+  {% include 'student/base.html' with student=request.user.student %}
+     </ul1>
+<div class="container">
+    <h2 style="color:blue;text-align: center;">Student Profile</h2>
+    <hr>
+  <h3  style ="margin-left: 90px;">image: <img src="{{student.profile_pic.url}}"  class="avatar"></h3>
+    <hr>  
+    <div class="row">
+        <div class="col-25">
+          <h3>first name:</h3>
+        </div>
+        <div class="col-75">
+        <h3>{{user.first_name}}</h3>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+          <div class="col-25">
+            <h3>last name:</h3>
+          </div>
+          <div class="col-75">
+           <h3>{{user.last_name}}</h3>
+          </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-25">
+            <h3>contact:</h3>
+            </div>
+            <div class="col-75">
+                <h3>{{student.contact}}</h3>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-25">
+           <h3>Email:</h3>
+            </div>
+          <div class="col-75">
+              <h3>{{user.email}}</h3>
+          </div>
+        </div>
+        <hr>
+      <div class="row">
+          <div class="col-25">
+         <h3>Address:</h3>
+          </div>
+        <div class="col-75">
+            <h3>{{student.address}}</h3>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-25">
+       <h3>course:</h3>
+        </div>
+      <div class="col-75">
+          <h3>{{student.course}}</h3>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <br>
+            <br>
+            <a href="{% url 'student-edit-profile' %}"><button type="button" class="editprofile">Edit profile </button></a>
+        </div>
+    </div>
+      </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{margin:0px}
+</style>
+</head>
+<body>
+    {% include 'faculty/base.html' with faculty=request.user.faculty %}
+<div class="container">
+    <h1 style="text-align:center;margin-top: 150px ;color:red;"> Faculty Dashbord</h1>
+    <hr>
+    <h2 style="text-align:center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Mr.{{faculty.user|capfirst}} Welcome to Tagore degree college(Autonomous)</h2>
+    <h3 style="text-align:center;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">since your the faculty for {{faculty.course}} course.Through this website you can add questions for the {{faculty.course}} online admission process</h3>
+    <h3 style="text-align:center;font-family: Verdana, Geneva, Tahoma, sans-serif;"><a href="{% url 'faculty-add-question' %}">make questions</a></h3>
+</div>
+</body>
+</html>

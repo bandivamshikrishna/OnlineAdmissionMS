@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html>
+<head>
+<style>
+    h2{margin-top:100px;
+    text-align:center;}
+* {
+  box-sizing: border-box;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type="email"]{width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    resize:vertical;}
+
+input[type="password"]{width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius: 4px;
+resize:vertical;}
+
+input[type="number"]{width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius: 4px;}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+input[type="submit"]{background-color:#f4511e;
+  color:black;
+  border:none;
+padding:16px 32px;
+width:150px;
+border-radius:6px;
+text-align:center;
+text-decoration: none;
+font-size:20px;
+}
+.container {
+    margin-left:200px;
+  border-radius: 10px;
+  padding: 20px;
+  width:70%;
+
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+    {% include 'core/navbar.html' %}
+<h2>signup form!</h2>
+  {{studentform.non_field_errors}}
+  {{userform.non_field_errors}}
+<div class="container">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+      <label for="fname">First Name:</label>
+      {{userform.first_name.errors}}
+      {% render_field userform.first_name|attr:"required:true" placeholder="Enter Your Name" %}
+
+   
+        <label>last name:</label>
+        {{userform.last_name.errors}}
+      {% render_field userform.last_name|attr:"required:true" placeholder="Enter Last Name" %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label>contact:</label>
+      {{studentform.contact.errors}}
+      {% render_field studentform.contact|attr:"required:true" placeholder="contact " %}
+    </div>
+    <div class="col-75">
+        <label>address:</label> 
+        {{studentform.address.errors}}
+      {% render_field studentform.address|attr:"required:true" placeholder="Address" %}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label>Email:</label>
+      {{userform.email.errors}}
+      {% render_field userform.email|attr:"required:true" placeholder="Email" %}
+    </div>
+    <div class="col-75">
+      <label>username:</label>
+      {{userform.username.errors}}
+      {% render_field userform.username|attr:"required:true" placeholder="Username" %}
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-25">
+          <label>password:</label>
+          {{userform.password1.errors}}
+          {% render_field userform.password1|attr:"required:true" placeholder="Password" %}
+      </div>
+      <div class="col-75">
+        <label>Re-enter password:</label>
+        {{userform.password2.errors}}
+        {% render_field userform.password2|attr:"required:true" placeholder="Comfirm Password" %}
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label>profile picture:</label>
+          {{studentform.profile_pic.errors}}
+          {% render_field studentform.profile_pic %}
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+        <br>
+        <input type="submit" value="Sign Up">
+      </div>
+  </div>
+  </form>
+</div>
+
+</body>
+</html>
+

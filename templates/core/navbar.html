@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        margin:0px;
+      }
+        ul{margin:0px;
+            padding:0px;
+            list-style-type: none;
+            background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+            overflow:hidden;
+          position:sticky;
+        top:0px;}
+          li{float:right;}
+           li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 20px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        li a:hover{background-color:black;}
+        menu {
+          float: left;
+          width: 20%;
+          text-align: center;
+        }
+        li a:hover{background-color:black;}li a, .dropbtn {
+          display: inline-block;
+          color: whitesmoke;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        li.dropdown {
+          display: inline-block;
+        } 
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li style="font-size:35px;float:left;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">TAGORE DEGREE COLLEGE(AUTONOMOUS)</li>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About us</a></li>
+        <li><a href="{% url 'student-portal' %}">Student</a></li>
+       
+         <li> <a href="{% url 'all-faculty-details' %}">faculty details</a></li>
+          <li>  <a href="{% url 'faculty-sign-in' %}">faculty login</a></li>
+          
+        <li><a href="{% url 'admin-portal' %}">Admin</a></li>
+        <li><a href="{% url 'all-course-details' %}"> courses</a></ul>
+</body>
+</html>

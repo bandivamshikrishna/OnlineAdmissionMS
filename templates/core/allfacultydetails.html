@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+.container {
+    margin-left: 300px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.col-25 {
+  float: left;
+  width: 30%;
+  margin-top: 6px;
+}
+.col-75 {
+  float: left;
+  width: 70%;
+  margin-top: 6px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+  {% include 'core/navbar.html' %}
+<div class="container">
+  
+    <div class="row">
+      <div class="col-25">
+       <img src="{% static 'core/narendar.jpeg' %}" alt="5 Terre" style="width:30%;margin-left: 150px;">
+      </div>
+      <div class="col-75">
+      <p>NAME:Narendar Balaraju</p>
+      <p>ROLE:Senior PROFESSOR</p>
+      <P>EXPERIENCE:10 YEARS</P>
+      <P>DEPARTMENT:COMPUTER SCIENCE </P>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+      <img src="{% static 'core/kalyani.jpeg' %}" alt="5 Terre" style="width:30%;margin-left: 150px;">
+      </div>
+      <div class="col-75">
+        <p>NAME: Kalyani </p>
+      <p>ROLE:Senior PROFESSOR</p>
+      <P>EXPERIENCE:10 YEARS</P>
+      <P>DEPARTMENT:COMPUTER SCIENCE </P>
+        <br><br>
+       
+    </div>
+    
+    <div class="row">
+      <div class="col-25">
+       <img src="{% static 'core/chenna.jpeg' %}" alt="5 Terre" style="width:30%;margin-left: 150px;">
+      </div>
+      <div class="col-75">
+        <p>NAME:Chenna  </p>
+        <p>ROLE: PROFESSOR</p>
+        <P>EXPERIENCE:10 YEARS</P>
+        <P>DEPARTMENT:COMPUTER SCIENCE </P>
+       </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <img src="{% static 'core/vamshikrishna.jpeg' %}" alt="5 Terre" style="width:30%;margin-left: 150px;">
+      </div>
+      <div class="col-75">
+        <p>NAME:Vamshi Krishna  </p>
+        <p>ROLE:Senior PROFESSOR</p>
+        <P>EXPERIENCE:10 YEARS</P>
+        <P>DEPARTMENT:COMPUTER SCIENCE </P>
+           </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <img src="{% static 'core/suresh.jpeg' %}" alt="5 Terre" style="width:30%;margin-left: 150px;">
+      </div>
+      <div class="col-75">
+        <p>NAME:Suresh  </p>
+        <p>ROLE:Assistant PROFESSOR</p>
+        <P>EXPERIENCE:10 YEARS</P>
+        <P>DEPARTMENT:COMPUTER SCIENCE </P>
+           </div>
+    </div>
+    
+  </form>
+</div>
+
+</body>
+</html>
